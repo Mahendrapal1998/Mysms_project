@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>hii</title>
+ 
+	<style>
+     table, th, td {
+     border: 4px solid white;
+     border-collapse: collapse;
+     text-align:center;
+     color:white;
+     background-color: #131210a0;
+      }
+      #bg{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+           
+            
+        }
+</style> 
+<script type="text/javascript">
+  function validateee()
+  {
+    var qq=document.getElementById('q').value;
+    if(qq=="")
+    {
+      alert("please enter quantity")
+      return false
+    }
+    else if(qq>{{record.0.4}})
+    {
+      alert("incorrect quantity")
+      return false
+    }
+    else if(qq<0)
+    {
+      alert("incorrect quantity")
+      return false
+    }
+  }
+</script>
+</head>
+<body id="bg" background="{% static 'qqq.jpg' %}">
+  <br><br>
+  <center>
+  <h1 style="color:white;">PRODUCT DETAIL</h1>
+ 
+     <table><br>
+        <tr><th>ID</th><th>Product Name</th>
+            <th>Brand Name</th> <th>Price</th>
+            <th>Quantity</th><th>Category</th> 
+            
+      </tr>
+        {% for i in record %}
+        <tr>
+        {% for n in i %}
+        <td>{{n}}</td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+        </table>
+        
+      </center>
+<br><br>
+<center>
+<form action="/buy">
+<h3 style="color:white;">Enter quantity</h3><input id="q" type="text" name="quan" style="width:200px; height:50px; background-color: antiquewhite;">
+<br><br><br>
+<input type="submit" onclick="return validateee()" style="text-decoration:none; color:white; background-color:orange; font-size:30px; border-radius:50px; width:200px;" value="Buy">
+</center>
+</form>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+       table, th, td {
+     border: 4px solid white;
+     border-collapse: collapse;
+     text-align:center;
+     color:white;
+     background-color: #131210a0;
+      }
+      #bg{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+           
+            
+        }
+    </style>
+  </head>
+  <body id="bg" background="{% static 'qqq.jpg' %}">
+    <br><br>
+    <center>
+      <h1 style="background-color:#04AA6D; color:white; border-radius:40px;">Your Orders Record</h1></center>
+   
+      <center>
+     <table><br>
+        <tr><th>ID</th><th>Name</th>
+            <th>E-mail</th><th>Product Name</th>
+            <th>Brand Name</th> <th>Price</th>
+            <th>Quantity</th><th>Category</th> 
+            <th>Date and Time</th>	<th>View Invoice</th>		
+      </tr>
+        {% for i in order %}
+        <tr>
+        {% for n in i %}
+        <td>{{n}}</td>
+        {% endfor %}
+        <td><button style="border: none; background-color: #04AA6D; border-radius: 5px; padding: 10px;"><a href="/invoice?time={{i.8}}" style="text-decoration: none; color: white;">Invoice</a></button></td>
+        </tr>
+        {% endfor %}
+        </table>
+        
+      </center>
+      
+      </body>

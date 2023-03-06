@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'sms.css' %}">
+  <script>
+    function GenerateCaptcha() {
+      var chr1 = Math.ceil(Math.random() * 10) + '';
+      var chr2 = Math.ceil(Math.random() * 10) + '';
+      var chr3 = Math.ceil(Math.random() * 10) + '';
+      var str = new Array(4).join().replace(/(.|$)/g, function () {
+        return ((Math.random() * 36) | 0).toString(36)[Math.random() < .5 ? "toString" : "toUpperCase"]();
+      });
+      var captchaCode = str + chr1 + ' ' + chr2 + ' ' + chr3;
+      document.getElementById("txtCaptcha").value = captchaCode
+
+
+    }
+
+    function ValidCaptcha() {
+      var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+      var str2 = removeSpaces(document.getElementById('txtCompare').value);
+      if (str1 == str2) return true;
+      return false;
+    }
+    function removeSpaces(string) {
+      return string.split('').join('');
+    }		
+  </script>
+</head>
+<div id="bg"></div>
+
+<form action="/regTask">
+  <center>
+    <h1>Registration Page</h1></center>
+  <div class="form-field">
+    Admin:<input type="radio" name="user" value="Admin" style="box-shadow: none;">
+    Employee:<input type="radio" name="user" value="Employee" style="box-shadow: none;">
+    Customer:<input type="radio" name="user" value="Customer" style="box-shadow: none;">
+  </div>
+  <div class="form-field">
+    <input type="text" placeholder=" Enter Name" name="name" required />
+  </div>
+  <div class="form-field">
+    <input type="text" placeholder=" Enter Father Name" name="fname" required />
+  </div>
+  <div class="form-field">
+    <input type="email" placeholder=" Enter Email" name="email" required />
+  </div>
+  <div class="form-field">
+    <input type="text" placeholder=" Enter Mobile" name="mobile" required />
+  </div>
+  <div class="form-field">
+    Male<input type="radio" name="gender" value="male" style="box-shadow: none;">
+    Female<input type="radio" name="gender" value="female" style="box-shadow: none;">
+  </div>
+  <div class="form-field">
+    <input type="password" placeholder="Enter Password" name="pass" required />
+  </div>
+  <div class="form-field">
+    <input type="password" placeholder="Enter Re-Password" name="cpass" required />
+  </div>
+  <div class="form-field">
+    <input type="text" id="txtCaptcha" disabled
+      style="text-align: center; border: none; font-weight: bold; font-size: 20px; font-family: Modern;" />
+    <button class="btn1" id="btnrefresh" onclick="GenerateCaptcha();"> Refresh </button>
+  </div>
+  <div class="form-field">
+    <input type="text" id="txtCompare" placeholder="Enter Captcha" required />
+  </div>
+  <div class="form-field">
+    <button class="btn" type="submit" onclick="alert(ValidCaptcha());">Submit</button>
+  </div>
+</form>
+</body>
+
+</html>

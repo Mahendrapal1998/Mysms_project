@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <style>
+        .main {
+            margin: auto;
+            font-size: 28px;
+            padding: 10px;
+            width: 50%;
+        }
+
+        .main .card {
+            background-color: rgba(0, 0, 0, 0.489);
+            border-radius: 18px;
+            box-shadow: 1px 1px 8px 0 rgba(255, 219, 14, 0.55);
+            height: auto;
+            margin-bottom: 30px;
+            padding: 50px;
+        }
+
+
+        .main .card table {
+            border: none;
+            font-size: 16px;           
+            width: 70%;
+            text-align: center;
+        }
+        td{
+            color:white;
+            font-weight: bold;
+            font-size: larger;
+        }
+        #bg{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body id="bg" background="{% static 'profile.jpg' %}">
+
+    <div class="main">
+
+
+        <div class="card">
+            <center>
+                <h2 style="color: white; text-decoration: underline;">INVOICE</h2>
+            </center>
+            <div class="card-body">
+                <center>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Profile ID</td>
+                                <td>:</td>
+                                <td>{{invoice.0.0}}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>:</td>
+                                <td>{{invoice.0.1}}</td>
+                            </tr>
+                            <tr>
+                                <td>E-mail</td>
+                                <td>:</td>
+                                <td>{{invoice.0.2}}</td>
+                            </tr>
+                            <tr>
+                                <td>Product Name</td>
+                                <td>:</td>
+                                <td>{{invoice.0.3}}</td>
+                            </tr>
+                            <tr>
+                                <td>Brand Name</td>
+                                <td>:</td>
+                                <td>{{invoice.0.4}}</td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td>:</td>
+                                <td>{{invoice.0.6}}</td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>:</td>
+                                <td>{{invoice.0.7}}</td>
+                            </tr>
+                            <tr>
+                                <td>Date and Purchase</td>
+                                <td>:</td>
+                                <td>{{invoice.0.8}}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Amount</td>
+                                <td>:</td>
+                                <td>{{invoice.0.5}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+        </div>
+      </body>

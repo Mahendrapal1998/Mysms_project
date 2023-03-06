@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <style>
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(18, 18, 18);
+            padding: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            text-decoration: none;
+            gap: 20px;
+
+        }
+
+        .logo {
+            margin-right: 50px;
+        }
+
+        .logo img {
+            width: auto;
+            height: 60px;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        li a:hover {
+
+            font-size: 20px;
+            text-decoration: underline;
+            color: white;
+        }
+
+            {
+            box-sizing: border-box;
+        }
+
+        .rbutton1 {
+            background-color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 15px;
+
+        }
+
+        .rbutton1 a {
+            color: white;
+        }
+    </style>
+    </head>
+
+    <body style="white">
+        <nav>
+            <div>
+                <a href="home" class="logo"><img src="{% static 'logo1.jpg' %}"
+                        style="border-radius: 5px; height: 100px;"></a>
+            </div>
+            <ul>
+                <li><a href="/insert">Add Product</a></li>
+                <li><a href="/prorec">Product Record</a></li>
+                <li><a href="/adminprofile"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+                <li><a href="/emprec"><i class="fa fa-user-circle-o"></i> Employe Record</a></li>
+                <li><a href="/custrec"><i class="fa fa-users" aria-hidden="true"></i> Customer Record</a></li>
+                <li><a href="/sellrec"><i class="fa fa-truck"></i> Selling Record</a></li>
+                <li><a href="/logouta"><i class="fa fa-sign-out"></i> Logout</a></li>
+            </ul>
+        </nav>
+        <section>
+            <br><br><br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <div class="card borderr">
+                            <center>
+                                <div>
+                                    <img class="card-img-top" src="https://i.dlpng.com/static/png/13340_preview.png"
+                                        width="220px" height="230px;" alt="Card image cap">
+                                    <h2>Number of User:- {{custn.0.0}}</h2>
+                                </div><br>
+
+                            </center>
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="card borderr">
+                            <center>
+                                <div>
+                                    <img class="card-img-top"
+                                        src="https://i.dlpng.com/static/png/1479310-customer-customer-png-368_412_preview.png"
+                                        width="
+                                        250px" height="230px;" alt="Card image cap">
+                                    <h3>Number of Employee:- {{empn.0.0}}</h3>
+                                </div>
+
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card borderr">
+                            <center>
+                                <div>
+                                    <img class="card-img-top"
+                                        src="https://png.pngtree.com/png-vector/20220923/ourmid/pngtree-business-man-selling-online-on-cell-phone-png-image_6212200.png"
+                                        width="300px" height="230px;" alt="Card image cap">
+                                    <h3>Product Category:- {{pron.0.0}}</h3>
+                                </div><br>
+
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="card">
+                            <center>
+                                <div>
+
+                                    <img class="card-img-top"
+                                        src="https://png.pngtree.com/png-vector/20220810/ourmid/pngtree-vector-cartoon-of-businessmen-talking-with-other-man-with-shadow-of-png-image_5723179.png"
+                                        width="250px" height="230px;" alt="Card image cap">
+                                    <h3>Total Product Sold:- {{selln.0.0}}</h3>
+                                </div><br>
+
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+        </section>
+        <section>
+            <footer style="background-color: rgba(0, 0, 0, 0.813);">
+                <p style="padding-top:5%;color:white;">Copyright &copy : 2022-23 Shopmart. All Right Reserved </p>
+                <hr>
+                <p style="padding-left: 85%;padding-bottom: 20px;">
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"
+                            style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"
+                            style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"
+                            style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span
+                            class="fa fa-youtube-play" style="color:white;font-size:30px;><i class="
+                            sr-only"></i></span></a>&nbsp;
+                </p>
+            </footer>
+        </section>
+    </body>
+
+</html>

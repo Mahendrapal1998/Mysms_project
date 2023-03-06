@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'sms.css' %}">
+ 
+</head>
+<div id="bg"></div>
+
+<form action="/editTaskpro">
+  <center>
+    <h1>Edit Page</h1></center>
+    <div class="form-field">
+        ID:<input type="text" name="id" value="{{detail.0.0}}" required />
+       </div>
+  <div class="form-field">
+   Name:<input type="text"  name="namee" value="{{detail.0.1}}" required />
+  </div>
+  <div class="form-field">
+   Brand Name:<input type="text" name="brande" value="{{detail.0.2}}" required />
+  </div>
+  <div class="form-field">
+    Price:<input type="text" name="pricee" value="{{detail.0.3}}" required />
+  </div>
+  <div class="form-field">
+    Quantity: <input type="text" name="quantitye" value="{{detail.0.4}}"required />
+  </div>
+  <div class="form-field">
+    Category: <input type="text" name="categorye" value="{{detail.0.5}}"required />
+  </div>
+  <div class="form-field">
+    <button class="btn" type="submit">Update</button>
+  </div>
+</form>
+</body>
+
+</html>

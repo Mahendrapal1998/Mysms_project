@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+       table, th, td {
+     border: 4px solid white;
+     border-collapse: collapse;
+     text-align:center;
+     color:white;
+     background-color: #131210a0;
+      }
+      #bg{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+           
+            
+        }
+    </style>
+  </head>
+  <body id="bg" background="{% static 'qqq.jpg' %}">
+    <br><br>
+    <center>
+      <h1 style="background-color:#04AA6D; color:white; border-radius:40px;">Welcome To Product Record Page  </h1></center>
+
+      <center>
+   
+      <center>
+     <table><br>
+        <tr><th>ID</th><th>Name</th>
+            <th>Brand Name</th> <th>Price</th>
+            <th>Quantity</th><th>Category</th> 
+            <th>Edit Profile</th>	
+            <th>Delete Record</th>	
+      </tr>
+        {% for i in detail %}
+        <tr>
+        {% for n in i %}
+        <td>{{n}}</td>
+        {% endfor %}
+        <td align="center">
+           <button><a   href='/editpro?id={{i.0}}' style="text-decoration: none; color:black;">Edit</a></button></td>
+           <td align="center">
+           <button><a href='/deletetaskpro?sid={{i.0}}' style="text-decoration: none; color:black;">Delete</a></button></td>
+    
+        </tr>
+        {% endfor %}
+        </table>
+        
+      </center>
+      
+      </body>

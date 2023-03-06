@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'sms.css' %}">
+ 
+</head>
+<div id="bg"></div>
+
+<form action="/editTaskemp">
+  <center>
+    <h1>Edit Page</h1></center>
+    <div class="form-field">
+        ID:<input type="text" placeholder=" Enter Name" name="id" value="{{detail.0.0}}" required />
+       </div>
+  <div class="form-field">
+   Name:<input type="text" placeholder=" Enter Name" name="namee" value="{{detail.0.1}}" required />
+  </div>
+  <div class="form-field">
+   Father Name:<input type="text" placeholder=" Enter Father Name" name="fnamee" value="{{detail.0.2}}" required />
+  </div>
+  <div class="form-field">
+    Email:<input type="email" placeholder=" Enter Email" name="emaile" value="{{detail.0.3}}" required />
+  </div>
+  <div class="form-field">
+    Mobile: <input type="text"  name="mobilee" value="{{detail.0.4}}" required />
+  </div>
+  <div class="form-field">
+    Male<input type="radio" name="gender" value="male" style="box-shadow: none;">
+    Female<input type="radio" name="gender" value="female" style="box-shadow: none;">
+  </div>
+  <div class="form-field">
+    Password:<input type="password" placeholder="Enter Password" name="passe" required value="{{detail.0.6}}" />
+  </div>
+  <div class="form-field">
+    <button class="btn" type="submit">Update</button>
+  </div>
+</form>
+</body>
+
+</html>

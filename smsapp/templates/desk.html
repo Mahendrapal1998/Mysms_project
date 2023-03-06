@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>productpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(18, 18, 18);
+            padding: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            text-decoration: none;
+            gap: 20px;
+
+        }
+
+        .logo {
+            margin-right: 50px;
+        }
+
+        .logo img {
+            width: auto;
+            height: 60px;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        li a:hover {
+
+            font-size: 20px;
+            text-decoration: underline;
+            color: white;
+        }
+
+            {
+            box-sizing: border-box;
+        }
+
+        .rbutton1 {
+            background-color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 15px;
+
+        }
+
+        .rbutton1 a {
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body style="white">
+    <nav>
+        <div>
+            <a href="home" class="logo"><img src="{% static 'logo1.jpg' %}"
+                    style="border-radius: 5px; height: 100px;"></a>
+        </div>
+        <ul>
+            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="/userprofile"><i class="fa fa-user-circle-o"></i> Profile</a></li>
+            <li><a href="/myorder"><i class="fa fa-shopping-bag"></i> Order History</a></li>
+            <li><a href="/carttask"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a></li>
+            <li><a href="/logoutu"><i class="fa fa-sign-out"></i> Logout</a></li>
+        </ul>
+    </nav>
+    <br>
+    <section>
+        <div class="store">
+            <h1>Products &#8594</h1>
+        </div><br><br><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+
+                    <div class="card borderr">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://tapita.io/pb/pub/media/spb/usr/19/oti/1627268830235/magento-mobile-app.png"
+                                    width="250px" height="230px;" alt="Card image cap">
+                                <h1>Smart Phone</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=mobile">See
+                                        Products</a></button><br><br>
+                            </div>
+                        </center>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="card borderr">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1666277428/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/256345_0_hccyqp.png/mxw_2048,f_auto"" width="
+                                    250px" height="230px;" alt="Card image cap">
+                                <h1>Laptops</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=laptop">See
+                                        Products</a></button><br><br>
+
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card borderr">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1605262440/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/8797818585118.png/mxw_2048,f_auto"" width="
+                                    200px" height="230px;" alt="Card image cap">
+                                <h1>Head Phones</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=headphone" see product name="id"
+                                        value="1">See
+                                        Products</a></button><br><br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1664417835/Croma%20Assets/Entertainment/Television/Images/256071_0_rsnj6p.png/mxw_2048,f_auto"
+                                    width="220px" height="230px;" alt="Card image cap">
+                                <h1>Television</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=tv" see product name="id"
+                                        value="1">See
+                                        Products</a></button><br><br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+
+                    <div class="card borderr">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1667849714/Croma%20Assets/Computers%20Peripherals/Tablets%20and%20iPads/Images/245650_0_ksd3sp.png/mxw_1650,f_auto"
+                                    width="220px" height="230px;" alt="Card image cap">
+                                <h1>Tablets</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=tablet">See
+                                        Products</a></button><br><br>
+                            </div>
+                        </center>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="card borderr">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631708228/Croma%20Assets/Communication/Wearable%20Devices/Images/242894_v2hwgf.png/mxw_2560,f_auto"" width="
+                                    250px" height="230px;" alt="Card image cap">
+                                <h1>Smart Watch</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=watch">See
+                                        Products</a></button><br><br>
+
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card borderr">
+                        <center>
+                            <div>
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1665444483/Croma%20Assets/Entertainment/Speakers%20and%20Media%20Players/Images/223919_0_og91fw.png/mxw_2560,f_auto"
+                                    width="
+                                    200px" height="230px;" alt="Card image cap">
+                                <h1>Speakers</h1>
+                            </div><br>
+                            <div>
+
+                                <button class="rbutton1"><a href="/proddetail?category=speaker" see product name="id"
+                                        value="1">See
+                                        Products</a></button><br><br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card">
+                        <center>
+                            <div>
+
+                                <img class="card-img-top"
+                                    src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1670589378/Croma%20Assets/Large%20Appliances/Washers%20and%20Dryers/Images/227345_0_zk59n8.png/mxw_2048,f_auto"
+                                    width="250px" height="230px;" alt="Card image cap">
+                                <h1>Washing Machine</h1>
+                            </div><br>
+                            <div>
+
+
+                                <button class="rbutton1"><a href="#" see product name="id" value="1">See
+                                        Products</a></button><br><br>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section>
+        <footer style="background-color: rgba(0, 0, 0, 0.813);">
+            <p style="padding-top:5%;color:white;">Copyright &copy : 2022-23 Shopmart. All Right Reserved </p>
+            <hr>
+            <p style="padding-left: 85%;padding-bottom: 20px;">
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"
+                        style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"
+                        style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"
+                        style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube-play"
+                        style="color:white;font-size:30px;><i class=" sr-only"></i></span></a>&nbsp;
+            </p>
+        </footer>
+    </section>
+
+</body>
+
+</html>
